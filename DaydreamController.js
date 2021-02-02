@@ -10,18 +10,18 @@ function DaydreamController() {
 
 		return navigator.bluetooth.requestDevice( {
 			filters: [ {
-				name: 'Daydream controller'
+				name: 'mojing-motion'
 			} ],
-			optionalServices: [ 0xfe55 ]
+			optionalServices: ['622f5b2a-60da-4484-929a-69e3a9140258']
 		} )
 		.then( function ( device ) {
 			return device.gatt.connect();
 		} )
 		.then( function ( server ) {
-			return server.getPrimaryService( 0xfe55 );
+			return server.getPrimaryService( '622f5b2a-60da-4484-929a-69e3a9140258' );
 		} )
 		.then( function ( service ) {
-			return service.getCharacteristic( '00000001-1000-1000-8000-00805f9b34fb' );
+			return service.getCharacteristic( 'ffb4a651-c224-420b-a134-13d3aba313fb' );
 		} )
 		.then( function ( characteristic ) {
 			characteristic.addEventListener( 'characteristicvaluechanged', handleData );
