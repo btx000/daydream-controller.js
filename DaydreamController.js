@@ -60,15 +60,15 @@ function DaydreamController() {
 
 		state.xAcc = (data.getUint8(6) & 0x07) << 10 | (data.getUint8(7) & 0xFF) << 2 | (data.getUint8(8) & 0xC0) >> 6;
 		state.xAcc = (state.xAcc << 19) >> 19;
-		// state.xAcc *= (8 * 9.8 / 4095.0);
+		state.xAcc *= (1.8 * 9.8 / 4095.0);
 
 		state.yAcc = (data.getUint8(8) & 0x3F) << 7 | (data.getUint8(9) & 0xFE) >>> 1;
 		state.yAcc = (state.yAcc << 19) >> 19;
-		// state.yAcc *= (8 * 9.8 / 4095.0);
+		state.yAcc *= (1.8 * 9.8 / 4095.0);
 
 		state.zAcc = (data.getUint8(9) & 0x01) << 12 | (data.getUint8(10) & 0xFF) << 4 | (data.getUint8(11) & 0xF0) >> 4;
 		state.zAcc = (state.zAcc << 19) >> 19;
-		// state.zAcc *= (8 * 9.8 / 4095.0);
+		state.zAcc *= (1.8 * 9.8 / 4095.0);
 
 		state.xGyro = ((data.getUint8(11) & 0x0F) << 9 | (data.getUint8(12) & 0xFF) << 1 | (data.getUint8(13) & 0x80) >> 7);
 		state.xGyro = (state.xGyro << 19) >> 19;
