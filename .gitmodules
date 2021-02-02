@@ -1,0 +1,3 @@
+[submodule "ahrs"]
+	path = ahrs
+	url = https://github.com/psiphi75/ahrs.git
