@@ -45,29 +45,31 @@
 
 					if ( mesh !== undefined ) {
 
-						var angle = Math.sqrt( state.xOri * state.xOri + state.yOri * state.yOri + state.zOri * state.zOri );
+						// var angle = Math.sqrt( state.xOri * state.xOri + state.yOri * state.yOri + state.zOri * state.zOri );
 
-						if ( angle > 0 ) {
+						// if ( angle > 0 ) {
 
-							axis.set( state.xOri, state.yOri, state.zOri )
-							axis.multiplyScalar( 1 / angle );
+						// 	axis.set( state.xOri, state.yOri, state.zOri )
+						// 	axis.multiplyScalar( 1 / angle );
 
-							quaternion.setFromAxisAngle( axis, angle );
+						// 	quaternion.setFromAxisAngle( axis, angle );
 
-							if ( initialised === false ) {
+						// 	if ( initialised === false ) {
 
-								quaternionHome.copy( quaternion );
-								quaternionHome.inverse();
+						// 		quaternionHome.copy( quaternion );
+						// 		quaternionHome.inverse();
 
-								initialised = true;
+						// 		initialised = true;
 
-							}
+						// 	}
 
-						} else {
+						// } else {
 
-							quaternion.set( 0, 0, 0, 1 );
+						// 	quaternion.set( 0, 0, 0, 1 );
 
-						}
+						// }
+
+						quaternion.set(state.xOri, state.yOri, state.zOri, state.wOri);
 
 						if ( state.isHomeDown ) {
 
