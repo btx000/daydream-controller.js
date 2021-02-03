@@ -1,3 +1,6 @@
 [submodule "ahrs"]
 	path = ahrs
 	url = https://github.com/psiphi75/ahrs.git
+[submodule "model"]
+	path = model
+	url = https://github.com/TechnoBuddhist/VR-Controller-Daydream.git
