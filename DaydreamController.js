@@ -61,7 +61,7 @@ function DaydreamController () {
 
 		info.idx = (data.getUint8(1) & 0x60) >> 5;
 
-		info.orientation1 = ((data.getUint8(1) & 0x31) << 9) | ((data.getUint8(2) & 0xff) << 1) | ((data.getUint8(3) & 0x80) >> 7);
+		info.orientation1 = ((data.getUint8(1) & 0x1f) << 9) | ((data.getUint8(2) & 0xff) << 1) | ((data.getUint8(3) & 0x80) >> 7);
 		info.orientation1 = parseInt(info.orientation1, 14);
 
 		info.orientation2 = ((data.getUint8(3) & 0x7f) << 7) | ((data.getUint8(4) & 0xfe) >> 1);
